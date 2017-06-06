@@ -17,6 +17,7 @@ class FacebookLogin extends React.Component {
     version: PropTypes.string,
     icon: PropTypes.string,
     language: PropTypes.string,
+    autoFocus: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -92,6 +93,7 @@ class FacebookLogin extends React.Component {
       <div>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
          <button
+            autoFocus={this.props.autoFocus}
             className={this.props.cssClass + ' ' + this.props.size}
             onClick={this.click}>
           <i className={'fa ' + this.props.icon}></i> {this.props.textButton}
@@ -110,11 +112,12 @@ class FacebookLogin extends React.Component {
     return (
       <div>
         <button
+            autoFocus={this.props.autoFocus}
             className={this.props.cssClass + ' ' + this.props.size}
             onClick={this.click}>
           {this.props.textButton}
         </button>
-        
+
         <style dangerouslySetInnerHTML={{ __html: styles }}></style>
       </div>
     );
